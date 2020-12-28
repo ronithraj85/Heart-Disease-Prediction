@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+
+</head>
+
+<body>
+    <div class='header'>
+        <b>Heart Disease Prediction</b>
+    </div>
+    <marquee scrollamount=15 onmouseover="this.stop();" onmouseout="this.start();">
+        <p class="marq">
+            Fill the following details and get to know if you have a heart disease.!
+        </p>
+    </marquee>
+    <div class="row">
+        <div class="col">
+            <form action="\predict" method="post">
+                <fieldset>
+                    <div class="details">
+                        <div class="col-sm-6">
+                            <legend>Patient Details:</legend>
+                            <br>
+                            <label for="sex">1.Sex-</label>
+                            <select name="gender" id="gender" required="required">
+                                <option value="0">Male</option>
+                                <option value="1">Female</option>
+                            </select>
+                            <br>
+                            <label for="age">2.Age-</label>
+                            <input type="text" id="age" name="age" required="required"><br>
+                            <label for="trestbps">3.Resting Blood Pressure-</label>
+                            <input type="text" id="trestbps" name="trestbps" required="required"><br>
+                            <label for="chol">4.Serum cholestrol in mg/dl (100 to 600)-</label>
+                            <input type="text" id="chol" name="chol" required="required"><br>
+                            <label for="thalach">5.Maximum heart Rate-</label>
+                            <input type="text" id="thalach" name="thalach" required="required"><br>
+                            <label for="peak">6.ST depression induced by exercise relative to rest-</label>
+                            <input type="text" id="peak" name="peak" required="required"><br>
+                            <label for="chestpain">7.Chest Pain-</label>
+                            <select name="chest" id="cp" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <br>
+                            <label for="fbs">8.Fasting blood sugar(>120 mg/dl)-</label>
+                            <select name="fbs" id="fbs" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select>
+                            <br>
+                            <label for="restecg">9.Resting electrocardiographic results-</label>
+                            <select name="restecg" id="restecg" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                            <br>
+                            <label for="exang">10.Exercise Induced Angina-</label>
+                            <select name="exang" id="exang" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select>
+                            <br>
+                            <label for="slopw">11.slope of the peak exercise ST segment-</label>
+                            <select name="slope" id="slope" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                            <br>
+                            <label for="exang">12.Number of major vessels colored by flourosopy-</label>
+                            <select name="ca" id="ca" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <br>
+                            <label for="exang">13.Displays the thalassemia-</label>
+                            <select name="thal" id="thal" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <br>
+                            <input type="submit" value="Submit">
+
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col">
+            <div class="result">
+                <fieldset>
+                    <legend>
+                        <b class="report">Report:</b><br>
+                    </legend>
+                    <center>
+                        <p class="yes">
+                            {{ result }}<br>
+                            {{ news }}
+                        </p>
+                    </center>
+                </fieldset>
+                <h2>Attribute Information:</h2>
+                - age<br>
+                - sex<br>
+                - chest pain type (4 values)<br>
+                - resting blood pressure<br>
+                - serum cholestoral in mg/dl<br>
+                - fasting blood sugar > 120 mg/dl<br>
+                - resting electrocardiographic results (values 0,1,2)<br>
+                - maximum heart rate achieved<br>
+                - exercise induced angina<br>
+                - oldpeak = ST depression induced by exercise relative to rest<br>
+                - the slope of the peak exercise ST segment<br>
+                - number of major vessels (0-3) colored by flourosopy<br>
+                - thal: 3 = normal; 6 = fixed defect; 7 = reversable defect<br>
+                <img src="../static/images/heart_illustration.jpg" height=380 width=600>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <p>
+                <b class="result-footer">
+                    <center>©2020 December - Ronith Raj</center>
+                </b>
+            </p>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+
+.header{
+    padding: 10px 50px;
+    background-color:black;
+    color: #f1f9f9;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.marq{
+    color: red;
+}
+.result-footer {
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgb(20, 46, 71);
+   color: white;
+   text-align: center;
+   padding: 1px 5px;
+   position: fixed;
+}
+
+.details{
+    height: 100%;
+    width: 100%;
+
+}
+.result{
+    height: 100%;
+    width: 100%;
+}
+.label-class{
+    text-decoration-style: both;
+}
+
+legend {
+    background-color: rgba(201, 76, 76, 0.4 );
+    color: black;
+    margin:0;
+    text-align: center;
+}
+
+fieldset{
+    /* text-align: center; */
+    border:solid ;
+    padding: 13px 16px;
+    width: 85%;
+    border-left: 5%;
+}
+
+.report{
+    font-size: 24px;
+    color: green;
+}
+
+.yes{
+    padding-left : 25px;
+    padding-top: 20px;
+    text-align: center;
+    color: rgb(255, 136, 0);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}

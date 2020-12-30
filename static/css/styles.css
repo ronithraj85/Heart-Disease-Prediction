@@ -21,6 +21,9 @@
    padding: 1px 5px;
    position: fixed;
 }
+#age,#trestbps,#chol,#thalach,#peak  {
+    width: 100%;
+}
 
 .details{
     height: 100%;

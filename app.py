@@ -169,9 +169,9 @@ def predict():
             if yes_chance < 1.0:
                 return render_template("index.html", result = "Congratulations!You donot have any chance of getting a heart disease.",news = "Stay happy and safe!")
             else:
-                return render_template("index.html", result = "Congratulations!You have a low chance of getting a heart disease which is : {}.".format(yes_chance),news = "Stay happy and safe!")
+                return render_template("index.html", result = "Congratulations!You have a low chance of getting a heart disease which is : {} %.".format(yes_chance),news = "Stay happy and safe!")
         else:
-            return render_template("index.html", result = "Sorry!Your chance of getting a heart disease is : {}.".format(yes_chance),news = "Get well soon!")
+            return render_template("index.html", result = "Sorry!Your chance of getting a heart disease is : {} %.".format(yes_chance),news = "Get well soon!")
 
     return render_template("index.html")
 
